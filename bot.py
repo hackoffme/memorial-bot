@@ -1,8 +1,9 @@
 import asyncio
-from tbot.config import load_config
 from aiogram import Bot, Dispatcher
 
+from tbot.config import load_config
 from tbot.handlers.user import register_user
+
 
 
 def register_all_handlers(dp):
@@ -10,7 +11,7 @@ def register_all_handlers(dp):
 
 
 async def main():
-    config = load_config()
+    config = load_config(".env")
     bot = Bot(token=config.token, parse_mode='HTML')
     dp = Dispatcher(bot)
 
