@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 
 from tbot.models.database import Base
+from tbot.models.locate import Locate
 from tbot.config import load_config
 from tbot.handlers.user import register_user
 
@@ -17,10 +18,10 @@ async def main():
     config = load_config(".env")
 
     engine = create_async_engine(f'sqlite+aiosqlite:///db.sqlite')
-    print(type(Base.metadata.create_all()))
+
     async with engine.begin() as conn:
-        await conn.run_sync()
-    
+        await conn.run_sync(Base.metadata.create_all)
+
     async_sessionmaker = sessionmaker(
         engine, expire_on_commit=False, class_=AsyncSession
     )
@@ -30,9 +31,6 @@ async def main():
     dp['db'] = async_sessionmaker
 
     register_all_handlers(dp)
-
-
-
     try:
         await dp.start_polling()
     finally:
