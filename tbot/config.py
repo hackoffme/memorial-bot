@@ -9,7 +9,7 @@ class TelegramBot:
     admins: list[int]
 
 
-def load_config(path: str=None):
+def load_config(path: str = None):
     env = Env()
     env.read_env(path)
     print(env.str("BOT_TOKEN"))

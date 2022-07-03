@@ -1,2 +1,5 @@
 aiogram
 environs
+sqlalchemy
+geoalchemy2
+aiosqlite
