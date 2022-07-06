@@ -1,0 +1,5 @@
+FROM python:3.10-alpine
+ARG HOST
+ARG PORT
+ARG MONGO
+RUN 
