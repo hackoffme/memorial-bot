@@ -1,1 +1,13 @@
-version
+version: "3.8"
+services:
+  api:
+    env_file: .env
+    build:
+      context: ./
+      dockerfile: ./docker/api/Dockerfile
+    volumes:
+      -./api:
+  mongo:
+    image: mongo
+    volumes:
+      - $DB_PATH/mongo:/data/db
