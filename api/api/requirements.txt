@@ -1,5 +1,5 @@
-fastapi
-uvicorn
-sqlalchemy
-typer
+fastapi~=0.78.0
+uvicorn~=0.18.2
+sqlalchemy~=1.4.39
 aiosqlite
+pydantic~=1.9.1
