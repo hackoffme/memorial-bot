@@ -4,5 +4,5 @@ venv/
 .env
 .vscode/
 api/venv/
-api/data/
-api/data/mongo/
+api/db/data/
+
