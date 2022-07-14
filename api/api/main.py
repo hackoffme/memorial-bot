@@ -2,7 +2,7 @@ import asyncio
 from fastapi import FastAPI
 import uvicorn
 from db.database import init_models
-from db.models import User, Post
+from db.models import Users, Posts
 
 from db.database import AsyncSession
 from repositories.user import UserRepository
@@ -20,6 +20,10 @@ if __name__ == "__main__":
     # db()
     u = UserRepository()
     # print(dir(u))
-
-    asyncio.run(u.get_all())
+    loop = asyncio.get_event_loop()
+    getall = loop.run_until_complete(u.get_all())
+    # print(type(getall))
+    # for item in getall:
+    #     print(item)
+    # asyncio.run(u.get_all())
 

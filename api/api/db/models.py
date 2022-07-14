@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, String, DECIMAL, Boolean
 from db.database import Base
 
 
-class User(Base):
+class Users(Base):
     __tablename__ = 'User'
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True)
@@ -12,7 +12,7 @@ class User(Base):
     is_admin = Column(Boolean, default=False)
 
 
-class Post(Base):
+class Posts(Base):
     __tablename__ = 'Post'
     id = Column(Integer, primary_key=True, index=True)
     lat = Column(DECIMAL(9, 6))

@@ -7,6 +7,7 @@ class UserBase(BaseModel):
     is_admin: bool
 
 
+
 class UserIn(UserBase):
     password: constr(min_length=8)
     password2: str
@@ -21,3 +22,6 @@ class UserIn(UserBase):
 class User(UserBase):
     id: int
     hashed_password: str
+
+    class Config:
+        orm_mode = True
