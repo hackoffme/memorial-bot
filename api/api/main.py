@@ -19,11 +19,8 @@ if __name__ == "__main__":
     # uvicorn.run('main:app', reload=True)
     # db()
     u = UserRepository()
-    # print(dir(u))
+
     loop = asyncio.get_event_loop()
     getall = loop.run_until_complete(u.get_all())
-    # print(type(getall))
-    # for item in getall:
-    #     print(item)
-    # asyncio.run(u.get_all())
+    
 
