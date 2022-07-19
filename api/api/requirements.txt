@@ -1,6 +1,7 @@
 fastapi~=0.78.0
 uvicorn~=0.18.2
 sqlalchemy~=1.4.39
+sqlalchemy-stubs
 aiosqlite
 pydantic~=1.9.1
 pydantic[email]
